@@ -1,0 +1,15 @@
+FROM cypress/included:8:5
+
+RUN npm config set strict-ssl false
+
+WORKDIR /e2e
+
+COPY ./package*.json /e2e/
+RUN NODE_TLS_REJECT_UNAUTHORIZED=0 npm i 
+
+COPY ./ /e2e/
+COPY ./ci/run-test.sh /e2e/
+
+RUN chmod +x /e2e/run-test.sh
+
+ENTRYPOINT["/e2e/run-test.sh"]

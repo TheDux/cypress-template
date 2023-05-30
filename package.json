@@ -1,0 +1,28 @@
+{
+  "name": "cypresstemplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "cypress": "8.5",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "scripts": {
+    "open": "cypress open",
+    "info": "cypress info",
+    "test": "cypress run",
+    "test:debug": "cypress run --headed --no-exit",
+    "test:chrome": "cypress run --browser chrome",
+    "test:firefox": "cypress run --browser firefox",
+    "cucumber:report": "node scripts/concat-cucumber-reports.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "cypress-cucumber-preprocessor": {
+    "step_definitions": "cypress/support/steps",
+    "cucumberJson": {
+      "generate": true
+    }
+  }
+}
