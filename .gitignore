@@ -1,3 +1,4 @@
+.gitignore
 node_modules
 cypress/cucumber-json
 package-lock.json
